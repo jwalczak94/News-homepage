@@ -57,7 +57,11 @@
 .featured-section {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
+
+  @include c.respond(desktop) {
+    gap: 1.5rem;
+  }
 
   img {
     max-height: 129px;

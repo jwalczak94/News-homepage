@@ -329,7 +329,12 @@ p {
 .featured-section {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
+}
+@media only screen and (min-width: 90rem) {
+  .featured-section {
+    gap: 1.5rem;
+  }
 }
 .featured-section img {
   max-height: 129px;
@@ -375,13 +380,13 @@ p {
 .featured-article {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 21.875rem));
+  grid-template-columns: repeat(auto-fill, minmax(20.2rem, 1fr));
   padding-bottom: 5rem;
 }
 @media only screen and (min-width: 48rem) {
   .featured-article {
     gap: 1.875rem;
-    padding-bottom: 8rem;
+    padding-bottom: 3.125rem;
   }
 }
 
@@ -420,6 +425,24 @@ p {
 }
 .aside__article p {
   color: var(--gray400);
+}
+
+.footer-fm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: 0.75rem 0;
+  text-align: center;
+}
+.footer-fm p:first-of-type a {
+  color: var(--accentRed);
+  font-weight: 700;
+}
+.footer-fm p:last-of-type a {
+  color: var(--accentOrange);
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=main.css.map */
