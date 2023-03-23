@@ -1,0 +1,91 @@
+@use "../mixin" as c;
+
+.header {
+  padding-top: 1.75rem;
+  padding-bottom: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  @include c.respond(tab-land) {
+    padding-top: 5.625rem;
+    padding-bottom: 3.375rem;
+  }
+
+  img {
+    height: 1.75rem;
+
+    @include c.respond(tab-port) {
+      height: auto;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    background-color: var(--light);
+    padding: 9rem 1.5rem 0 1.5rem;
+    min-height: 100vh;
+    min-width: 16rem;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    transform: translateX(100%);
+    transition: All 0.5s ease-in;
+
+    @media (orientation: landscape) {
+      padding-top: 5rem;
+    }
+
+    @include c.respond(tab-port) {
+      display: flex;
+      flex-direction: row;
+      gap: 2.5rem;
+
+      position: static;
+      min-height: auto;
+      min-width: auto;
+
+      padding: 0;
+      transform: translateX(0);
+    }
+
+    a {
+      opacity: 0;
+      color: var(--gray700);
+      font-size: 0.9375rem;
+      line-height: 1.625rem;
+
+      transition: 0.5s ease;
+      transform: translateX(0%);
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--accentOrange);
+          letter-spacing: 3px;
+        }
+      }
+
+      @include c.respond(tab-port) {
+        opacity: 1;
+
+        @media (hover: hover) {
+          &:hover {
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+  }
+}

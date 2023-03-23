@@ -1,0 +1,64 @@
+@use "./mixin" as c;
+.overlay {
+  display: none;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  width: 100dvw;
+  width: 100vw;
+  z-index: 39;
+}
+
+.hidden {
+  display: block;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.nav-active {
+  transform: translateX(0) !important;
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.container {
+  max-width: 69.375rem;
+  margin-inline: auto;
+  padding: 0 1rem;
+
+  @include c.respond(phone) {
+    padding: 0 2.5rem;
+  }
+
+  @include c.respond(desktop) {
+    padding: 0;
+  }
+}

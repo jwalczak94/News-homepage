@@ -1,0 +1,93 @@
+@use "../mixin" as c;
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @include c.respond(tab-port) {
+    gap: 1.75rem;
+  }
+
+  &__content {
+    @include c.respond(tab-port) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.875rem;
+    }
+
+    &__title {
+      color: var(--gray900);
+      font-size: clamp(2.5rem, 1.3571rem + 2.381vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    &__description {
+      p {
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
+
+        @include c.respond(tab-port) {
+          padding-top: 0;
+        }
+      }
+
+      &__button {
+        background-color: var(--accentRed);
+        color: var(--light);
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        line-height: 1;
+        text-transform: uppercase;
+
+        padding: 1.0625rem 2rem;
+
+        @media (hover: hover) {
+          &:hover {
+            background-color: var(--gray900);
+          }
+        }
+      }
+    }
+  }
+}
+
+.featured-section {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+
+  img {
+    max-height: 129px;
+  }
+
+  &__description {
+    display: grid;
+    justify-items: space-between;
+
+    &__number {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--gray400);
+
+      margin-bottom: 0.75rem;
+    }
+
+    &__title,
+    a {
+      color: var(--gray900);
+      font-size: 1.125rem;
+      font-weight: 800;
+      line-height: 1.5rem;
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--accentRed);
+        }
+      }
+    }
+  }
+}
