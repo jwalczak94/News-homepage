@@ -16,12 +16,12 @@
 .featured-article {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 21.875rem));
+  grid-template-columns: repeat(auto-fill, minmax(20.2rem, 1fr));
 
   padding-bottom: 5rem;
 
   @include c.respond(tab-port) {
     gap: 1.875rem;
-    padding-bottom: 8rem;
+    padding-bottom: 3.125rem;
   }
 }

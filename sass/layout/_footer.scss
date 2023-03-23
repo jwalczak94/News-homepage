@@ -1,27 +1,20 @@
-// @use "./mixin" as m;
+.footer-fm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-// .footer-fm {
-//   @include m.flex-center(0.5rem, column);
-//   justify-content: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: 0.75rem 0;
+  text-align: center;
 
-//   font-size: 0.75rem;
-//   line-height: 1rem;
-//   margin: 0.75rem 0;
-//   text-align: center;
+  p:first-of-type a {
+    color: var(--accentRed);
+    font-weight: 700;
+  }
 
-//   position: absolute;
-//   bottom: 0;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   z-index: -1;
-
-//   p:first-of-type a {
-//     color: var(--color100);
-//     font-weight: 700;
-//   }
-
-//   p:last-of-type a {
-//     color: var(--color200);
-//     font-weight: 700;
-//   }
-// }
+  p:last-of-type a {
+    color: var(--accentOrange);
+    font-weight: 700;
+  }
+}
